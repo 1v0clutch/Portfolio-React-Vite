@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen w-screen bg-gray-50 text-gray-950 font-sans">
+      <div className="min-h-screen w-screen bg-black-50 text-gray-950 font-sans">
       {/* Navigation Bar */}
         <nav className="bg-white shadow-md p-4 sticky top-0 z-10">
           <div className='flex justify-between items-center max-w-6xl mx-auto'>
@@ -49,7 +49,7 @@ function App() {
               <div className="text-center mt-6">
                 <button
                   onClick={() => setCount((count) => count + 1)}
-                  className="bg-blue-500 text-black px-6 py-2 rounded-lg hover:bg-blue-600 transition"
+                  className="bg-blue-200 text-black px-6 py-2 rounded-lg hover:bg-blue-600 transition"
                 >
                   count is {count}
                 </button>
@@ -70,16 +70,42 @@ function App() {
       </div>
     </section>
     <section id='about'>
-      <div className='min-h-screen w-full flex justify-center items-center'>
-        <div className='border outline rounded-xl p-4'>
-          <p>Testing</p>
-        </div>
+      <div className='flex flex-col md:flex-row justify-center items-center min-h-[calc(100vh-125px)] gap-20'>
+            <div className='leftContainer w-2/5 md:w-1/2 h-screen flex justify-center items-center bg-blue-100'>
+              <img src={sheesh} className='w-full max-w-md h-auto border' alt="Your Image" />
+            </div>
+            <div className='rightContainer w-3/5 justify-center items-center text-center md:text-left'>
+
+              {/* Title */}
+              <h1 className="text-4xl text-center mt-10 text-blue-600 font-bold">
+                Vite + React + Tailwind
+              </h1>
+
+            <p className="text-center mt-10 text-sm text-gray-400">
+              Click on the logos to learn more about Vite and React.
+            </p>
+          </div>
+          
+
       </div>
     </section>
     <section id='projects'>
       <div className='min-h-screen w-full flex justify-center items-center'>
-        <div className='border outline rounded-xl p-4'>
-          <p>Testing</p>
+
+         <div className='flex gap-8'>
+          <div className='h-120 w-90 border outline rounded-xl p-4'>
+            <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
+            <p className='text-center'>Testing</p>
+          </div>
+          <div className='h-120 w-90 border outline rounded-xl p-4'>
+            <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
+            <p className='text-center'>Testing</p>
+          </div>
+        
+          <div className='h-120 w-90 border outline rounded-xl p-4'>
+            <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
+            <p className='text-center'>Testing</p>
+          </div>
         </div>
       </div>
     </section>
