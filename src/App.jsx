@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import sheesh from './assets/sheesh.JPG'
 import viteLogo from '/vite.svg'
-
+import { motion } from 'framer-motion';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -77,13 +77,24 @@ function App() {
             <div className='rightContainer w-3/5 justify-center items-center text-center md:text-left'>
 
               {/* Title */}
-              <h1 className="text-4xl text-center mt-10 text-blue-600 font-bold">
+              <motion.h1
+                className="text-4xl text-blue-600 font-bold mb-4 text-center"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+              >
                 Vite + React + Tailwind
-              </h1>
+              </motion.h1>
 
-            <p className="text-center mt-10 text-sm text-gray-400">
-              Click on the logos to learn more about Vite and React.
-            </p>
+              {/* Paragraph with animation */}
+              <motion.p
+                className="text-sm text-gray-400 text-center"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+              >
+                Click on the logos to learn more about Vite and React.
+              </motion.p>
           </div>
           
 
@@ -93,19 +104,33 @@ function App() {
       <div className='min-h-screen w-full flex justify-center items-center'>
 
          <div className='flex gap-8'>
-          <div className='h-120 w-90 border outline rounded-xl p-4'>
+          <motion.div 
+            className='h-120 w-90 border outline rounded-xl p-4'
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, ease: 'easeOut' }}
+          >
             <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
             <p className='text-center'>Testing</p>
-          </div>
-          <div className='h-120 w-90 border outline rounded-xl p-4'>
+          </motion.div>
+          <motion.div 
+            className='h-120 w-90 border outline rounded-xl p-4'
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
+          >
             <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
             <p className='text-center'>Testing</p>
-          </div>
-        
-          <div className='h-120 w-90 border outline rounded-xl p-4'>
+          </motion.div>
+          <motion.div 
+            className='h-120 w-90 border outline rounded-xl p-4'
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
             <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
             <p className='text-center'>Testing</p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
