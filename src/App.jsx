@@ -1,147 +1,90 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import sheesh from './assets/sheesh.JPG'
-import viteLogo from '/vite.svg'
 import { motion } from 'framer-motion';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <div className="min-h-screen w-screen bg-black-50 text-gray-950 font-sans">
       {/* Navigation Bar */}
-        <nav className="bg-white shadow-md p-4 sticky top-0 z-10">
-          <div className='flex justify-between items-center max-w-6xl mx-auto'>
+        <nav className="bg-white shadow-lg p-4 sticky top-0">
+          <div className='flex justify-center items-center max-w-6xl mx-auto'>
             <ul className="flex space-x-6 text-lg font-medium ml-5">
               <li className="hover:text-blue-600 cursor-pointer"><a href='#home' className='text-inherit no-underline'>Home</a></li>
               <li className="hover:text-blue-600 cursor-pointer"><a href='#about' className='text-inherit no-underline'>About</a></li>
               <li className="hover:text-blue-600 cursor-pointer"><a href='#projects' className='text-inherit no-underline'>Projects</a></li>
               <li className="hover:text-blue-600 cursor-pointer"><a href='#contact' className='text-inherit no-underline'>Contact</a></li>
             </ul>
-            <ul className="flex space-x-6 text-lg font-medium mr-5">
-              <li className="hover:text-blue-600 cursor-pointer"><a href='#home' className='text-inherit no-underline'>Test</a></li>
-              <li className="hover:text-blue-600 cursor-pointer"><a href='#about' className='text-inherit no-underline'>Test</a></li>
-              <li className="hover:text-blue-600 cursor-pointer"><a href='#projects' className='text-inherit no-underline'>Test</a></li>
-              <li className="hover:text-blue-600 cursor-pointer"><a href='#contact' className='text-inherit no-underline'>Test</a></li>
-            </ul>
           </div>
         </nav>
-        <section id='home' className='scroll-mt-32'>
         {/* Logos */}
-        <div className='flex flex-col md:flex-row justify-center items-center min-h-[calc(100vh-125px)] px-4 gap-20'>
-            <div className='leftContainer max-w-xl text-center md:text-left'>
-              <div className="flex justify-center items-center gap-10 mt-10">
-                <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-                  <img src={viteLogo} className="w-24 hover:scale-110 transition" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-                  <img src={reactLogo} className="w-24 hover:scale-110 transition" alt="React logo" />
-                </a>
-              </div>
-
-              {/* Title */}
-              <h1 className="text-4xl text-center mt-10 text-blue-600 font-bold">
-                Vite + React + Tailwind
+        <section id='home' className="w-full min-h-screen px-6 md:px-12 py-16 scroll-mt-32">
+          <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            {/* Left side */}
+            <div className="space-y-6 p-24 ml-24">
+              <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight">
+                Hi, I'm Steven.
               </h1>
-
-              {/* Counter Card */}
-              <div className="text-center mt-6">
-                <button
-                  onClick={() => setCount((count) => count + 1)}
-                  className="bg-blue-200 text-black px-6 py-2 rounded-lg hover:bg-blue-600 transition"
-                >
-                  count is {count}
-                </button>
-                <p className="mt-3 text-gray-500">
-                  Edit <code className="bg-gray-100 px-1 rounded">src/App.jsx</code> and save to test HMR.
-                </p>
+              <h2 className="text-blue-600 font-bold text-2xl">
+                I do Projects.
+              </h2>
+              <button 
+              className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition"
+              onClick={() => document.getElementById("projects").scrollIntoView({behavior:"smooth"})}
+              >
+                See Projects
+              </button>
             </div>
 
-            {/* Docs Note */}
-            <p className="text-center mt-10 text-sm text-gray-400">
-              Click on the logos to learn more about Vite and React.
-            </p>
-          </div>
-          
-          <div className='rightContainer flex justify-center items-center'>
-            <img src={sheesh} className='w-full max-w-md h-auto border' alt="Your Image" />
-          </div>
-      </div>
-    </section>
-    <section id='about'>
-      <div className='flex flex-col md:flex-row justify-center items-center min-h-[calc(100vh-125px)] gap-20'>
-            <div className='leftContainer w-2/5 md:w-1/2 h-screen flex justify-center items-center bg-blue-100'>
-              <img src={sheesh} className='w-full max-w-md h-auto border' alt="Your Image" />
+            {/* Right side image grid */}
+            <div className="grid grid-cols-2 gap-6 p-12">
+              <div className="row-span-2 bg-gray-200  rounded-lg"></div>
+              <div className="bg-gray-200 aspect-[4/3] rounded-lg"></div>
+              <div className="bg-gray-200 aspect-[4/3] rounded-lg"></div>
             </div>
-            <div className='rightContainer w-3/5 justify-center items-center text-center md:text-left'>
+          </div>          
+        </section>
+        <section id='about' className='w-full min-h-screen md:px-12 py-16 bg-white scroll-mt-15'>
+          <h1 className="text-2xl font-bold">About</h1>
+        </section>
 
-              {/* Title */}
-              <motion.h1
-                className="text-4xl text-blue-600 font-bold mb-4 text-center"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
-              >
-                Vite + React + Tailwind
-              </motion.h1>
+        <section id='projects' className='w-full min-h-screen md:px-12 py-16 scroll-mt-15'>
+          <div className="flex flex-col">
+            <div className="flex items-center h-1/6">
+              <h1 className="text-2xl font-bold">Top Destinations</h1>
+            </div>
 
-              {/* Paragraph with animation */}
-              <motion.p
-                className="text-sm text-gray-400 text-center"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-              >
-                Click on the logos to learn more about Vite and React.
-              </motion.p>
+            <div className="grid grid-cols md:grid-cols-4 gap-6 p-16 h-5/6">
+              <div className="bg-gray-200 aspect-[4/5] rounded-lg"></div>
+              <div className="bg-gray-200 aspect-[4/5] rounded-lg"></div>
+              <div className="bg-gray-200 aspect-[4/5] rounded-lg"></div>
+              <div className="bg-gray-200 aspect-[4/5] rounded-lg"></div>
+            </div>
           </div>
-          
+        </section>
 
-      </div>
-    </section>
-    <section id='projects'>
-      <div className='min-h-screen w-full flex justify-center items-center'>
-
-         <div className='flex gap-8'>
-          <motion.div 
-            className='h-120 w-90 border outline rounded-xl p-4'
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, ease: 'easeOut' }}
-          >
-            <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
-            <p className='text-center'>Testing</p>
-          </motion.div>
-          <motion.div 
-            className='h-120 w-90 border outline rounded-xl p-4'
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: 'easeOut' }}
-          >
-            <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
-            <p className='text-center'>Testing</p>
-          </motion.div>
-          <motion.div 
-            className='h-120 w-90 border outline rounded-xl p-4'
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
-            <img src={sheesh} className='h-90 w-full max-w-md border' alt="Your Image" />
-            <p className='text-center'>Testing</p>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-    
-    <section id='contact'>
-      <div className='min-h-screen w-full flex justify-center items-center'>
-        <div className='border outline rounded-xl p-4'>
-          <p>Testing</p>
-        </div>
-      </div>
-    </section>
+        <section id='contact'>
+        <footer className="bg-gray-900 text-gray-300 py-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              
+              {/* Left side */}
+              <p className="text-sm">
+                © {new Date().getFullYear()} MyWebsite. All rights reserved.
+              </p>
+              
+              {/* Right side */}
+              <div className="flex space-x-4">
+                <a href="#" className="hover:text-white">Privacy Policy</a>
+                <a href="#" className="hover:text-white">Terms</a>
+                <a href="#" className="hover:text-white">Contact</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+        </section>
     </div>
     </>
   )
